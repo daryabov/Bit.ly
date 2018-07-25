@@ -16,7 +16,27 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+      "Components/*": [
+        "src/components/*"
+      ],
+      "Reducers/*": [
+        "src/reducers/*"
+      ],
+      "Pages/*": [
+        "src/pages/*"
+      ],
+      "Actions/*": [
+        "src/actions/*"
+      ],
+      "Types": [
+        "src/types/index.tsx"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "exclude": [
     "node_modules",
