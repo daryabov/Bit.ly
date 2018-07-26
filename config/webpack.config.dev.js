@@ -100,7 +100,9 @@ module.exports = {
       'Reducers': path.resolve(__dirname, '../src/reducers'),
       'Pages': path.resolve(__dirname, '../src/pages'),
       'Actions': path.resolve(__dirname, '../src/actions'),
-      'Types': path.resolve(__dirname, '../src/types/index.tsx'),
+      'Types': path.resolve(__dirname, '../src/types/index.ts'),
+      'Sagas': path.resolve(__dirname, '../src/sagas/index.ts'),
+      'Utils': path.resolve(__dirname, '../src/utils'),
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',

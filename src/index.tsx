@@ -1,10 +1,12 @@
 import createHistory from 'history/createBrowserHistory';
 import Main from 'Pages/Main';
 
+import List from 'Pages/List';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, Router,  Switch } from 'react-router-dom';
+import redirectOutside from 'Utils/redirect';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store/store';
@@ -15,7 +17,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
-        <Route path='/' component={Main} />
+        <Route exact={true} path='/list' component={List} />
+        <Route exact={true} path='/' component={Main} />
+        <Route path='/:index' render={redirectOutside(store)}/>
       </Switch>
     </Router>
   </Provider>,

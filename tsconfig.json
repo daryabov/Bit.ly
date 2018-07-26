@@ -31,7 +31,13 @@
         "src/actions/*"
       ],
       "Types": [
-        "src/types/index.tsx"
+        "src/types/index.ts"
+      ],
+      "Sagas": [
+        "src/sagas/index.ts"
+      ],
+      "Utils/*": [
+        "src/utils/*"
       ]
     },
     "typeRoots": [

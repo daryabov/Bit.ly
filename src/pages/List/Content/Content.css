@@ -1,0 +1,10 @@
+.root {
+  text-align: left;
+}
+
+.remove {
+  width: 30px;
+  margin: 10px;
+  background-color: red;
+  font-size: 16px;
+}

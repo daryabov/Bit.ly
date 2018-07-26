@@ -1,23 +1,28 @@
 import { Reducer } from 'redux';
-import { InterfaceAction, InterfaceState } from 'Types';
+import { InterfaceAction, InterfaceLinks } from 'Types';
 
-const INITIAL_STATE: InterfaceState = {
-  links: [],
+const INITIAL_STATE: InterfaceLinks = {
+  list: [],
 }
 
-const linksReducer: Reducer = (state: InterfaceState = INITIAL_STATE, action: InterfaceAction) => {
+const links: Reducer = (state: InterfaceLinks = INITIAL_STATE, action: InterfaceAction) => {
   const { type, payload } = action;
 
   switch (type) {
     case 'ADD':
       return {
         ...state,
-        links: [...state.links, payload],
+        list: [...state.list, { link: payload, clicks: 0 }],
       }
     case 'REMOVE':
       return {
         ...state,
-        links: [...state.links.splice(1, payload)],
+        list: [...state.list.filter((element:any, index:number) => index !== payload)],
+      }
+    case "ADD_CLICK":
+      return {
+        ...state,
+        list: [...state.list.map((link:any, id:number) => id === payload ? { ...link, clicks: ++link.clicks } : link)]
       }
 
     default:
@@ -25,4 +30,4 @@ const linksReducer: Reducer = (state: InterfaceState = INITIAL_STATE, action: In
   }
 }
 
-export default linksReducer;
+export default links;

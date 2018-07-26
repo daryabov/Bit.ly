@@ -1,8 +1,8 @@
+import links from 'Reducers/links';
 import { combineReducers } from 'redux';
-import linksReducer from './links';
 
 const rootReducer = combineReducers({
-  linksReducer,
+  links,
 });
 
 export default rootReducer;

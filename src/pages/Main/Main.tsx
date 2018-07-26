@@ -6,21 +6,22 @@ import { InterfaceState } from 'Types';
 import Content from './Content';
 
 export interface InterfaceMain {
-  onAddLink: never;
+  links: object[];
+  onAddLink: any;
 }
 
 class Main extends React.Component<InterfaceMain> {
   public render() {
-    const { onAddLink } = this.props;
+    const { onAddLink, links } = this.props;
 
     return (
-      <Content add={onAddLink} />
+      <Content add={onAddLink} index={links.length} />
     );
   }
 }
 
 const mapStateToProps = (state: InterfaceState) => ({
-  links: state.links,
+  links: state.links.list,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
