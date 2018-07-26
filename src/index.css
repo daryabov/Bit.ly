@@ -13,10 +13,7 @@ body {
   color: white;
 }
 
-input {
-  border: 0;
-}
-
+input,
 button {
   border: 0;
 }
