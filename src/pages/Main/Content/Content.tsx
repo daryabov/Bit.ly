@@ -31,7 +31,7 @@ class Content extends React.Component<InterfaceContent> {
     return (
       <div className={styles.root}>
         <h1 className={styles.title}>Add link to reduce</h1>
-        <input ref={input => { this.input = input }} className={styles.input} placeholder='https://...' />
+        <input ref={this.input} className={styles.input} placeholder='https://...' />
         <button onClick={this.onClick} className={styles.button}>GET SHORT LINK</button>
         { shortcut !== '' && (
             <div>
