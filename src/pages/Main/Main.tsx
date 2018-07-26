@@ -2,7 +2,6 @@ import { add } from 'Actions/links';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { InterfaceState } from 'Types';
 import Content from './Content';
 
 export interface InterfaceMain {
@@ -12,23 +11,19 @@ export interface InterfaceMain {
 
 class Main extends React.Component<InterfaceMain> {
   public render() {
-    const { onAddLink, links } = this.props;
+    const { onAddLink } = this.props;
 
     return (
-      <Content add={onAddLink} index={links.length} />
+      <Content add={onAddLink} />
     );
   }
 }
 
-const mapStateToProps = (state: InterfaceState) => ({
-  links: state.links.list,
-});
-
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  onAddLink(link: string) {
+  onAddLink(link: object) {
     dispatch(add(link));
   },
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(null, mapDispatchToProps)(Main);

@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { generate } from 'shortid';
 import * as styles from './Content.css';
 
 export interface InterfaceContent {
   add: any;
-  index: number,
 }
 
 class Content extends React.Component<InterfaceContent> {
@@ -14,13 +14,14 @@ class Content extends React.Component<InterfaceContent> {
   private input: any = null;
 
   public onClick = () => {
-    const { add, index } = this.props;
+    const { add } = this.props;
     const { value } = this.input;
+    const id = generate();
 
-    add(value);
+    add({ link: value, id });
 
     this.setState({
-      shortcut: `${window.location.origin}/${index}`,
+      shortcut: `${window.location.origin}/${id}`,
     });
   }
 

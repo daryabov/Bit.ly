@@ -1,3 +1,5 @@
+// tslint:disable
+
 import { Reducer } from 'redux';
 import { InterfaceAction, InterfaceLinks } from 'Types';
 
@@ -12,17 +14,17 @@ const links: Reducer = (state: InterfaceLinks = INITIAL_STATE, action: Interface
     case 'ADD':
       return {
         ...state,
-        list: [...state.list, { link: payload, clicks: 0 }],
+        list: [...state.list, { link: payload.link, clicks: 0, id: payload.id }],
       }
     case 'REMOVE':
       return {
         ...state,
-        list: [...state.list.filter((element:any, index:number) => index !== payload)],
+        list: [...state.list.filter(element => element.id !== payload)],
       }
     case "ADD_CLICK":
       return {
         ...state,
-        list: [...state.list.map((link:any, id:number) => id === payload ? { ...link, clicks: ++link.clicks } : link)]
+        list: [...state.list.map((link:any) => link && link.id === payload ? { ...link, clicks: ++link.clicks } : link)]
       }
 
     default:

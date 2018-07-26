@@ -14,4 +14,5 @@ export interface InterfaceLinks {
 export interface InterfaceLink {
   clicks: number;
   link: string,
+  id: string,
 }

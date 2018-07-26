@@ -3,6 +3,6 @@ interface InterfaceAction {
   payload?: any
 }
 
-export const add = (payload: string): InterfaceAction => ({ type: 'ADD', payload });
+export const add = (payload: object): InterfaceAction => ({ type: 'ADD', payload });
 export const remove = (payload: number): InterfaceAction => ({ type: 'REMOVE', payload });
-export const addClick = (payload: number): InterfaceAction => ({ type: 'ADD_CLICK', payload });
+export const addClick = (payload: string): InterfaceAction => ({ type: 'ADD_CLICK', payload });

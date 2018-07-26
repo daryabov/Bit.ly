@@ -1,7 +1,6 @@
 import createHistory from 'history/createBrowserHistory';
-import Main from 'Pages/Main';
-
 import List from 'Pages/List';
+import Main from 'Pages/Main';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';

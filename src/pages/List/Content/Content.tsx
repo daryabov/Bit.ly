@@ -15,17 +15,23 @@ class Content extends React.Component<InterfaceContent> {
     return (
       <div className={styles.root}>
         <ul>
-          {links.map((link, index) => {
+          {links.map(link => {
             const onClick = () => {
-              remove(index);
+              remove(link.id);
             }
 
-            return (
-              <li key={index}>
-                <a href={`${url}/${index}`}>{url}/{index}</a> clicks: {link.clicks}
-                <button className={styles.remove} onClick={onClick}>-</button>
-              </li>
-            );
+            if (link) {
+              return (
+                <li key={link.id}>
+                  <a href={`${url}/${link.id}`}>
+                    {url}/{link.id}
+                  </a> clicks: {link.clicks}
+                  <button className={styles.remove} onClick={onClick}>-</button>
+                </li>
+              );
+            }
+
+            return null;
           })}
         </ul>
       </div>
