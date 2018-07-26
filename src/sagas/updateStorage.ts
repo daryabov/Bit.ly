@@ -1,8 +1,9 @@
 import { all, select, takeLatest } from 'redux-saga/effects';
+import { InterfaceState } from 'Types';
 
 export function* updateStorageSaga() {
   try {
-    const links:string[] = yield select((state: any) => state.links && state.links.list);
+    const links:string[] = yield select((state: InterfaceState) => state.links && state.links.list);
 
     localStorage.setItem('links', JSON.stringify(links));
   } catch (err) {

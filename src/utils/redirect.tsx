@@ -9,9 +9,8 @@ export default (store: Store) => {
   const linkId = window.location.pathname.slice(1);
   const link = links && links.list.find((element: InterfaceLink) => linkId === element.id)
 
-  store.dispatch(addClick(linkId));
-
   if (link) {
+    store.dispatch(addClick(linkId));
     window.location = link.link;
     return;
   }

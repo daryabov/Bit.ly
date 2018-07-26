@@ -1,5 +1,3 @@
-// tslint:disable
-
 import { Reducer } from 'redux';
 import { InterfaceAction, InterfaceLinks } from 'Types';
 
