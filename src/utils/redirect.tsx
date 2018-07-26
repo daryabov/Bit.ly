@@ -13,6 +13,7 @@ export default (store: Store) => {
 
   if (link) {
     window.location = link.link;
+    return;
   }
 
   return () => <Redirect to="/" />;
