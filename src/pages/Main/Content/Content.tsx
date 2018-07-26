@@ -11,7 +11,7 @@ class Content extends React.Component<InterfaceContent> {
     shortcut: '',
   }
 
-  private input: any = null;
+  private input: any = React.createRef();
 
   public onClick = () => {
     const { add } = this.props;
