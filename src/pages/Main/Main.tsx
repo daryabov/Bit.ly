@@ -15,7 +15,7 @@ class Main extends React.Component<InterfaceMain> {
     const { onAddLink } = this.props;
 
     return (
-      <Content add={onAddLink} />
+      <Content addLink={onAddLink} />
     );
   }
 }

@@ -15,7 +15,7 @@ class List extends React.Component<InterfaceList> {
     const { onRemoveLink, links } = this.props;
 
     return (
-      <Content remove={onRemoveLink} links={links} />
+      <Content removeLink={onRemoveLink} links={links} />
     );
   }
 }

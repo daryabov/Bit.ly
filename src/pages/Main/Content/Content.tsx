@@ -3,7 +3,7 @@ import { generate } from 'shortid';
 import * as styles from './Content.css';
 
 export interface InterfaceContent {
-  add: any;
+  addLink: any;
 }
 
 class Content extends React.Component<InterfaceContent> {
@@ -14,11 +14,11 @@ class Content extends React.Component<InterfaceContent> {
   private input: any = React.createRef();
 
   public onClick = () => {
-    const { add } = this.props;
+    const { addLink } = this.props;
     const { value } = this.input;
     const id = generate();
 
-    add({ link: value, id });
+    addLink({ link: value, id });
     this.input.value = '';
     this.setState({
       shortcut: `${window.location.origin}/${id}`,
