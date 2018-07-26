@@ -1,7 +1,7 @@
 import links from 'Reducers/links';
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer } from 'redux';
 
-const rootReducer = combineReducers({
+const rootReducer: Reducer = combineReducers({
   links,
 });
 

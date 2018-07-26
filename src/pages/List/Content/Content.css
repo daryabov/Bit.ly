@@ -1,10 +1,14 @@
-.root {
-  text-align: left;
+.link {
+  position: relative;
+  margin: 10px 0;
+  white-space: nowrap;
 }
 
 .remove {
   width: 30px;
-  margin: 10px;
   background-color: red;
   font-size: 16px;
+  position: absolute;
+  left: -40px;
+  top: -1px;
 }
