@@ -19,7 +19,7 @@ class Content extends React.Component<InterfaceContent> {
     const id = generate();
 
     add({ link: value, id });
-
+    this.input.value = '';
     this.setState({
       shortcut: `${window.location.origin}/${id}`,
     });
